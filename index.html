@@ -3,44 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Salary Tools Malaysia | EPF, SOCSO &amp; Tax Calculators</title>
-<meta name="description" content="Free Malaysia salary calculators for monthly salary, EPF, SOCSO, EIS, PCB, income tax, overtime and bonus estimates.">
+<title>Malaysia Salary Calculator | EPF, SOCSO, PCB &amp; Net Pay Tools</title>
+<meta name="description" content="Free Malaysia salary calculator tools for EPF, SOCSO, EIS, PCB, income tax, overtime, bonus and take-home pay estimates.">
 <link rel="canonical" href="https://salarytoolsmy.com/">
 <link rel="stylesheet" href="/assets/style.css">
 <script defer src="/assets/script.js"></script>
 </head>
 <body>
-<header class="site-header"><div class="header-inner">
-<a class="logo" href="/">SalaryToolsMY</a>
-<nav><a href="/">Home</a><a href="/salary-calculator-malaysia.html">Calculators</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav>
-</div></header>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/">SalaryToolsMY</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/salary-calculator-malaysia.html">Calculators</a>
+      <a href="/epf-example-3000.html">Guides</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html" class="nav-cta">Contact</a>
+    </nav>
+  </div>
+</header>
 
-<section class="hero"><div class="hero-inner">
-<p class="eyebrow">Malaysia payroll & salary tools</p>
-<h1>Malaysia Salary Calculators & Payroll Tools</h1>
-<p class="lead">Free tools to estimate salary, EPF, SOCSO, EIS, PCB, income tax, overtime and bonus figures for employees in Malaysia.</p>
-</div></section>
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="eyebrow">Malaysia payroll & salary tools</p>
+      <h1>Malaysia Salary Calculator for EPF, SOCSO, PCB and Take-Home Pay</h1>
+      <p class="lead">Estimate your monthly salary, net pay, EPF, SOCSO, EIS, PCB, overtime and bonus figures with free tools built for Malaysia users.</p>
+      <div class="hero-actions">
+        <a class="button" href="#calculator">Use Salary Calculator</a>
+        <a class="button secondary" href="#tools">Browse All Tools</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h2>Quick Salary Estimate</h2>
+      <div class="form-grid">
+        <div><label>Monthly Salary (RM)</label><input id="salary" type="number" value="3000"></div>
+        <div><label>EPF Rate (%)</label><input id="epfRate" type="number" value="11"></div>
+        <div><label>Bonus (RM)</label><input id="bonus" type="number" value="0"></div>
+        <div><label>Overtime Pay (RM)</label><input id="ot" type="number" value="0"></div>
+      </div>
+      <button onclick="salaryBreakdown()">Calculate Estimate</button>
+      <div id="homeResult" class="result-box"><p>Enter your salary details to see an estimate.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="container" id="tools">
+  <div class="section-title">
+    <div><h2>Free Malaysia Salary Tools</h2><p>Use these calculators for salary, payroll and take-home pay planning.</p></div>
+  </div>
+  <div class="grid"><a class="card" href="/salary-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Salary Calculator Malaysia</h3><p>Estimate gross salary, common payroll deductions and take-home pay in Malaysia.</p></a>
+<a class="card" href="/net-salary-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Net Salary Calculator Malaysia</h3><p>Estimate monthly net salary after EPF, SOCSO, EIS and a rough PCB amount.</p></a>
+<a class="card" href="/epf-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>EPF Calculator Malaysia</h3><p>Estimate employee and employer EPF contributions for Malaysia salary planning.</p></a>
+<a class="card" href="/socso-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>SOCSO Calculator Malaysia</h3><p>Estimate SOCSO contribution for Malaysia payroll planning.</p></a>
+<a class="card" href="/eis-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>EIS Calculator Malaysia</h3><p>Estimate Employment Insurance System contribution for employees in Malaysia.</p></a>
+<a class="card" href="/income-tax-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Income Tax Calculator Malaysia</h3><p>Estimate annual income tax and monthly tax planning figures for Malaysia.</p></a>
+<a class="card" href="/pcb-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>PCB Calculator Malaysia</h3><p>Estimate monthly PCB tax deduction for salary planning in Malaysia.</p></a>
+<a class="card" href="/overtime-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Overtime Calculator Malaysia</h3><p>Estimate overtime pay using monthly salary and overtime hours.</p></a>
+<a class="card" href="/bonus-tax-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Bonus Tax Calculator Malaysia</h3><p>Estimate how a bonus may affect monthly income and payroll deductions.</p></a></div>
+</div>
+
 <div class="container">
-<h2>Free Salary Tools</h2>
-<div class="grid"><a class="card" href="/salary-calculator-malaysia.html"><h3>Salary Calculator Malaysia</h3><p>Estimate monthly salary, EPF, SOCSO, EIS and basic take-home pay.</p></a>
-<a class="card" href="/net-salary-calculator-malaysia.html"><h3>Net Salary Calculator Malaysia</h3><p>Estimate take-home pay after common Malaysia payroll deductions.</p></a>
-<a class="card" href="/epf-calculator-malaysia.html"><h3>EPF Calculator Malaysia</h3><p>Estimate employee and employer EPF contributions in Malaysia.</p></a>
-<a class="card" href="/socso-calculator-malaysia.html"><h3>SOCSO Calculator Malaysia</h3><p>Estimate SOCSO contribution using a simplified payroll guide.</p></a>
-<a class="card" href="/eis-calculator-malaysia.html"><h3>EIS Calculator Malaysia</h3><p>Estimate Employment Insurance System contribution in Malaysia.</p></a>
-<a class="card" href="/income-tax-calculator-malaysia.html"><h3>Income Tax Calculator Malaysia</h3><p>Estimate annual income tax and monthly PCB for Malaysia salary planning.</p></a>
-<a class="card" href="/pcb-calculator-malaysia.html"><h3>PCB Calculator Malaysia</h3><p>Estimate monthly PCB tax deduction in Malaysia.</p></a>
-<a class="card" href="/overtime-calculator-malaysia.html"><h3>Overtime Calculator Malaysia</h3><p>Estimate overtime pay based on salary and overtime hours.</p></a>
-<a class="card" href="/bonus-tax-calculator-malaysia.html"><h3>Bonus Tax Calculator Malaysia</h3><p>Estimate how bonus income affects monthly pay.</p></a></div>
-<h2>Salary Guides & Examples</h2>
-<div class="grid">
-<a class="card" href="/epf-example-3000.html"><h3>EPF Calculation Example RM3,000</h3><p>Simple EPF contribution example with estimated deduction.</p></a>
-<a class="card" href="/socso-example-4000.html"><h3>SOCSO Contribution Example RM4,000</h3><p>Understand how SOCSO estimation works for payroll.</p></a>
-<a class="card" href="/pcb-example.html"><h3>PCB Tax Malaysia Example</h3><p>Learn how monthly tax deduction affects take-home salary.</p></a>
-</div>
+  <div class="callout">
+    <h2>Understand Your Real Take-Home Pay</h2>
+    <p>Gross salary is not the same as take-home pay. EPF, SOCSO, EIS and PCB may affect the final amount you receive each month.</p>
+  </div>
 </div>
 
-<footer><div class="footer-inner">
-<p>© 2026 SalaryToolsMY. Free Malaysia salary and payroll estimation tools.</p>
-<p><a href="/privacy-policy.html">Privacy Policy</a> · <a href="/terms.html">Terms</a> · <a href="/disclaimer.html">Disclaimer</a></p>
-</div></footer>
-</body></html>
+<div class="container">
+  <div class="section-title"><div><h2>Malaysia Salary Guides</h2><p>Simple examples to help users understand payroll deductions.</p></div></div>
+  <div class="grid">
+    <a class="card" href="/epf-example-3000.html"><span class="badge">Guide</span><h3>EPF Calculation Example for RM3,000 Salary</h3><p>See a simple EPF estimate and how it affects net salary.</p></a>
+    <a class="card" href="/socso-example-4000.html"><span class="badge">Guide</span><h3>SOCSO Contribution Example for RM4,000 Salary</h3><p>Understand how SOCSO estimation works for payroll planning.</p></a>
+    <a class="card" href="/pcb-example.html"><span class="badge">Guide</span><h3>PCB Tax Malaysia Example</h3><p>Learn how monthly tax deduction can affect take-home pay.</p></a>
+  </div>
+</div>
+
+<div class="container faq">
+  <h2>Frequently Asked Questions</h2>
+  <details open><summary>Is this salary calculator official?</summary><p>No. SalaryToolsMY provides simplified estimation tools for general planning only. Always refer to official sources or payroll professionals for final calculations.</p></details>
+  <details><summary>Can I use this to estimate take-home pay?</summary><p>Yes, the tools can help estimate common salary deductions such as EPF, SOCSO, EIS and rough PCB, but actual results may vary.</p></details>
+  <details><summary>Does SalaryToolsMY store my salary data?</summary><p>No account is required. Calculations run in your browser and are intended for quick estimation.</p></details>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h3>SalaryToolsMY</h3>
+      <p>Free Malaysia salary and payroll estimation tools for employees, job seekers and small business planning.</p>
+    </div>
+    <div>
+      <h3>Tools</h3>
+      <p><a href="/salary-calculator-malaysia.html">Salary Calculator</a></p>
+      <p><a href="/epf-calculator-malaysia.html">EPF Calculator</a></p>
+      <p><a href="/pcb-calculator-malaysia.html">PCB Calculator</a></p>
+    </div>
+    <div>
+      <h3>Legal</h3>
+      <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+      <p><a href="/terms.html">Terms</a></p>
+      <p><a href="/disclaimer.html">Disclaimer</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 SalaryToolsMY. All calculators are for estimation only.</div>
+</footer>
+</body>
+</html>
