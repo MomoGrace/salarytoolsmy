@@ -48,14 +48,3 @@ function toolCalc(type){
   }
   document.getElementById('result').innerHTML=out;
 }
-document.addEventListener('DOMContentLoaded', function () {
-  const firstFooterCol = document.querySelector('.footer .footer-inner > div:first-child');
-  if (!firstFooterCol) return;
-
-  const hasAbout = firstFooterCol.querySelector('a[href="/about.html"]');
-  if (hasAbout) return;
-
-  const p = document.createElement('p');
-  p.innerHTML = '<a href="/about.html">About SalaryToolsMY</a>';
-  firstFooterCol.appendChild(p);
-});
