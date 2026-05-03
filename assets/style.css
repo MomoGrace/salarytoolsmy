@@ -290,13 +290,7 @@ th{background:#f8fafc}
 .keyword-table td,.keyword-table th{font-size:.96rem}
 
 
-/* High CTR copy upgrade */
-.nav-cta {
-  font-weight: 900;
-}
-.button {
-  font-size: 1rem;
-}
+/* Stable final SEO/CTA fix */
 .result-box::after {
   content: "💰 This is an estimate of your salary after common deductions.";
   display: block;
