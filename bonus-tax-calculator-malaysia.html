@@ -3,13 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bonus Tax Calculator Malaysia</title>
-<meta name="description" content="Estimate how a bonus may affect monthly income and payroll deductions.">
+<title>Bonus Tax Calculator Malaysia (Bonus Month Take-Home Estimate)</title>
+<meta name="description" content="Estimate how bonus may affect monthly income, EPF and possible PCB deductions.">
 <link rel="canonical" href="https://salarytoolsmy.com/bonus-tax-calculator-malaysia.html">
 <link rel="stylesheet" href="/assets/style.css">
-<script defer src="/assets/script.js"></script>
+<style>
+.tool-page{background:#f6f8fb;}
+.tool-hero{padding:64px 20px;background:linear-gradient(115deg,#dbfff5 0%,#eef7ff 44%,#f8fafc 100%);}
+.tool-hero .hero-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 520px;gap:42px;align-items:center;}
+.tool-hero h1{font-size:clamp(42px,5vw,68px);line-height:1.05;margin:14px 0 18px;color:#111827;letter-spacing:-.04em;}
+.tool-hero .lead{font-size:18px;line-height:1.75;color:#35506b;margin:0 0 24px;}
+.tool-kicker{display:inline-flex;align-items:center;background:#ccfbf1;color:#006b5f;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;}
+.tool-card{background:#fff;border:1px solid #dbe3ef;border-radius:22px;padding:28px;box-shadow:0 20px 48px rgba(15,23,42,.10);}
+.tool-card h2{font-size:26px;margin:0 0 18px;color:#001f4d;}
+.tool-card label{display:block;font-weight:800;margin-bottom:8px;color:#001f4d;}
+.tool-card input,.tool-card select{width:100%;box-sizing:border-box;border:1px solid #cbd5e1;border-radius:12px;padding:13px 14px;font-size:16px;background:#fff;}
+.tool-card button{margin-top:14px;background:#0f7f72;color:#fff;border:0;border-radius:12px;padding:14px 18px;font-weight:800;cursor:pointer;box-shadow:0 10px 24px rgba(15,127,114,.18);}
+.tool-card button:hover{background:#0b695f;}
+.tool-result{margin-top:18px;background:#ecfdf8;border:1px solid #75f0dc;border-radius:16px;padding:18px;line-height:1.7;color:#001f4d;}
+.tool-result strong{color:#006b5f;}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.content-wrap{max-width:960px;margin:0 auto;}
+.tool-section{padding:48px 20px;}
+.tool-section .container{max-width:1120px;margin:0 auto;}
+.info-card{background:#fff;border:1px solid #dbe3ef;border-radius:20px;padding:28px;margin:18px 0;box-shadow:0 10px 28px rgba(15,23,42,.05);}
+.info-card h2,.info-card h3{color:#001f4d;margin-top:0;}
+.info-card p,.info-card li{color:#243b53;line-height:1.75;}
+.tool-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;margin:18px 0;box-shadow:0 8px 22px rgba(15,23,42,.05);}
+.tool-table th,.tool-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #e5edf6;vertical-align:top;}
+.tool-table th{background:#eff6ff;color:#001f4d;font-weight:900;}
+.tool-table tr:last-child td{border-bottom:0;}
+.related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px;}
+.related-grid a{display:block;background:#fff;border:1px solid #dbe3ef;border-radius:16px;padding:18px;text-decoration:none;color:#001f4d;font-weight:800;box-shadow:0 8px 22px rgba(15,23,42,.04);}
+.related-grid a:hover{border-color:#8bd8ca;transform:translateY(-2px);}
+.notice{background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;padding:18px;color:#7c2d12;line-height:1.7;}
+.faq details{background:#fff;border:1px solid #dbe3ef;border-radius:16px;padding:16px 18px;margin:12px 0;}
+.faq summary{font-weight:900;color:#001f4d;cursor:pointer;}
+.faq p{color:#243b53;line-height:1.75;}
+@media(max-width:920px){.tool-hero .hero-inner{grid-template-columns:1fr}.tool-card{max-width:680px}.related-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:640px){.tool-hero{padding:44px 16px}.form-grid,.related-grid{grid-template-columns:1fr}.tool-card{padding:22px}.tool-table{font-size:14px}.tool-table th,.tool-table td{padding:12px 10px}}
+</style>
 </head>
-<body>
+<body class="tool-page">
 <header class="site-header">
   <div class="header-inner">
     <a class="logo" href="/">SalaryToolsMY</a>
@@ -19,6 +54,7 @@
       <a href="/socso-calculator-malaysia.html">SOCSO</a>
       <a href="/pcb-calculator-malaysia.html">PCB Tax</a>
       <a href="/net-salary-calculator-malaysia.html">Take-Home Pay</a>
+      <a href="/salary-guides-malaysia.html">Guides</a>
       <a href="/salary-calculator-malaysia.html" class="nav-cta">Calculate Your Take-Home Pay</a>
     </nav>
   </div>
@@ -28,43 +64,61 @@
     <strong>Quick tools:</strong>
     <a href="/salary-calculator-malaysia.html">Salary Calculator</a>
     <span>·</span>
+    <a href="/net-salary-calculator-malaysia.html">Take-Home Pay</a>
+    <span>·</span>
     <a href="/epf-calculator-malaysia.html">EPF Calculator</a>
     <span>·</span>
     <a href="/socso-calculator-malaysia.html">SOCSO Calculator</a>
     <span>·</span>
     <a href="/pcb-calculator-malaysia.html">PCB Tax Calculator</a>
+    <span>·</span>
+    <a href="/salary-guides-malaysia.html">Salary Guides</a>
   </div>
 </div>
-
-<div class="container">
-  <div class="content">
-    <p class="eyebrow">Free Malaysia calculator</p>
-    <h1>Bonus Tax Calculator Malaysia</h1>
-    <p>Estimate how a bonus may affect monthly income and payroll deductions. Use this tool for quick planning before checking final payroll or tax figures.</p>
-    <div class="toolbox">
-      <div class="form-grid"><div><label>Monthly Salary (RM)</label><input id="salary" type="number" value="3000"></div><div><label>Bonus Amount (RM)</label><input id="amount" type="number" value="1000"></div></div>
-      <button onclick="toolCalc('bonus')">Calculate</button>
-      <div id="result" class="result-box"><p>Your estimate will appear here.</p></div>
+<main>
+<section class="tool-hero">
+  <div class="hero-inner">
+    <div>
+      <span class="tool-kicker">Free Malaysia calculator</span>
+      <h1>Bonus Tax Calculator Malaysia</h1>
+      <p class="lead">Estimate how a bonus may change take-home pay after common payroll deductions.</p>
+      <div class="hero-actions">
+        <a class="button" href="/salary-calculator-malaysia.html">Calculate Take-Home Pay</a>
+        <a class="button secondary" href="/salary-guides-malaysia.html">Read Salary Guides</a>
+      </div>
     </div>
-    <h2>How to use this calculator</h2>
-    <p>Enter your salary or payroll amount, then click calculate. The result gives a simplified estimate for planning and comparison.</p>
-    <h2>What this estimate includes</h2>
-    <ul>
-      <li>Common Malaysia payroll deductions or salary items</li>
-      <li>Basic take-home pay planning</li>
-      <li>Simple breakdowns for employees and job seekers</li>
-    </ul>
-    <h2>Important disclaimer</h2>
-    <p class="note">This calculator is not official payroll, tax or financial advice. Actual figures may depend on official schedules, employee category, age, tax reliefs and employer payroll settings.</p>
-    <h2>Related tools</h2>
-    <ul>
-      <li><a href="/salary-calculator-malaysia.html">Salary Calculator Malaysia</a></li>
-      <li><a href="/epf-calculator-malaysia.html">EPF Calculator Malaysia</a></li>
-      <li><a href="/pcb-calculator-malaysia.html">PCB Calculator Malaysia</a></li>
-    </ul>
-  </div>
+    <div class="tool-card">
+      <h2>Bonus Month Estimate</h2>
+      <div class="form-grid">
+  <div><label>Monthly Salary (RM)</label><input id="bonusSalary" type="number" value="5000"></div>
+  <div><label>Bonus Amount (RM)</label><input id="bonusAmount" type="number" value="5000"></div>
+  <div><label>EPF Rate (%)</label><input id="bonusEpf" type="number" value="11"></div>
+  <div><label>Other Monthly Pay (RM)</label><input id="otherPay" type="number" value="0"></div>
 </div>
-
+      <button onclick="calcBonusTool()">Calculate Estimate</button>
+      <div id="bonusResult" class="tool-result"><p>Your estimate will appear here.</p><p>💰 <strong>This is a simplified planning estimate.</strong></p></div>
+    </div>
+  </div>
+</section>
+<section class="tool-section">
+  <div class="container content-wrap">
+    <div class="info-card"><h2>How this bonus tax calculator works</h2><p>This tool compares a normal month with a bonus month. It estimates how bonus may affect EPF and possible PCB for take-home pay planning.</p></div><div class="info-card"><h2>Why bonus month salary may be different</h2><p>When bonus is paid, gross pay increases for that month. Payroll deductions and PCB may also increase depending on employer payroll method and tax calculation.</p></div><div class="info-card faq"><h2>Bonus calculator FAQ</h2><details open><summary>Is bonus taxable in Malaysia?</summary><p>Bonus may be treated as employment income and can affect monthly PCB and annual tax. This calculator is only a simplified estimate.</p></details></div>
+    <div class="info-card">
+      <h2>Related Malaysia salary tools</h2>
+      <p>Use these tools and guides together to understand salary, payroll deductions and estimated take-home pay in Malaysia.</p>
+      <div class="related-grid">
+  <a href="/salary-calculator-malaysia.html">Salary Calculator</a>
+  <a href="/net-salary-calculator-malaysia.html">Take-Home Pay Calculator</a>
+  <a href="/epf-calculator-malaysia.html">EPF Calculator</a>
+  <a href="/socso-calculator-malaysia.html">SOCSO Calculator</a>
+  <a href="/pcb-calculator-malaysia.html">PCB Tax Calculator</a>
+  <a href="/salary-guides-malaysia.html">Salary Guides</a>
+</div>
+    </div>
+    <div class="notice">Important: SalaryToolsMY provides simplified estimates for general planning only. Actual EPF, SOCSO, EIS and PCB amounts may vary based on official contribution schedules, tax profile, payroll settings and employer calculation.</div>
+  </div>
+</section>
+</main>
 <footer class="footer">
   <div class="footer-inner">
     <div>
@@ -74,8 +128,17 @@
     <div>
       <h3>Tools</h3>
       <p><a href="/salary-calculator-malaysia.html">Salary Calculator</a></p>
+      <p><a href="/net-salary-calculator-malaysia.html">Take-Home Pay Calculator</a></p>
       <p><a href="/epf-calculator-malaysia.html">EPF Calculator</a></p>
+      <p><a href="/socso-calculator-malaysia.html">SOCSO Calculator</a></p>
       <p><a href="/pcb-calculator-malaysia.html">PCB Calculator</a></p>
+    </div>
+    <div>
+      <h3>Guides</h3>
+      <p><a href="/salary-guides-malaysia.html">Salary Guides</a></p>
+      <p><a href="/salary-3000-malaysia.html">RM3,000 Salary</a></p>
+      <p><a href="/salary-5000-malaysia.html">RM5,000 Salary</a></p>
+      <p><a href="/gross-salary-vs-net-salary-malaysia.html">Gross vs Net Salary</a></p>
     </div>
     <div>
       <h3>Legal</h3>
@@ -87,5 +150,43 @@
   </div>
   <div class="footer-bottom">© 2026 SalaryToolsMY. All calculators are for estimation only.</div>
 </footer>
+<script>
+function rm(value){return 'RM' + Number(value || 0).toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function num(id){return Number(document.getElementById(id)?.value || 0);}
+function setResult(id, html){document.getElementById(id).innerHTML = html;}
+function estimateSOCSO(salary){return Math.min(Math.max(salary,0),6000)*0.005;}
+function estimateEIS(salary){return Math.min(Math.max(salary,0),6000)*0.002;}
+function estimatePCBMonthly(monthly, epfMonthly){
+  const annual = Math.max(0,(monthly*12) - (epfMonthly*12) - 9000);
+  const brackets = [
+    [5000,0],[15000,0.01],[15000,0.03],[15000,0.06],[20000,0.11],[30000,0.19],[300000,0.25],[100000,0.26],[500000,0.28],[Infinity,0.30]
+  ];
+  let left=annual, tax=0;
+  for(const [amount, rate] of brackets){
+    if(left<=0) break;
+    const chunk=Math.min(left,amount);
+    tax += chunk*rate;
+    left -= chunk;
+  }
+  return Math.max(0,tax/12);
+}
+function salaryCore(monthly, epfRate, bonus=0, overtime=0){
+  const gross = monthly + bonus + overtime;
+  const epf = gross * epfRate / 100;
+  const socso = estimateSOCSO(monthly);
+  const eis = estimateEIS(monthly);
+  const pcb = estimatePCBMonthly(gross, epf);
+  const net = gross - epf - socso - eis - pcb;
+  return {gross, epf, socso, eis, pcb, net};
+}
+</script>
+<script>
+function calcBonusTool(){
+ const salary=num('bonusSalary'), bonus=num('bonusAmount'), other=num('otherPay'), epfRate=num('bonusEpf');
+ const normal=salaryCore(salary, epfRate, 0, other);
+ const withBonus=salaryCore(salary, epfRate, bonus, other);
+ setResult('bonusResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Normal estimated take-home pay</td><td>${rm(normal.net)}</td></tr><tr><td>Bonus month gross pay</td><td>${rm(withBonus.gross)}</td></tr><tr><td>Estimated bonus month deductions</td><td>${rm(withBonus.epf+withBonus.socso+withBonus.eis+withBonus.pcb)}</td></tr><tr><td><strong>Estimated bonus month take-home pay</strong></td><td><strong>${rm(withBonus.net)}</strong></td></tr></table><p>Bonus can increase PCB in the bonus month. Actual payroll calculation may differ.</p>`);
+}
+</script>
 </body>
 </html>
