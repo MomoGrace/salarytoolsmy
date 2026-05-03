@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EIS Calculator Malaysia (Employment Insurance Estimate)</title>
-<meta name="description" content="Estimate Employment Insurance System contribution for employees in Malaysia.">
-<link rel="canonical" href="https://salarytoolsmy.com/eis-calculator-malaysia.html">
+<title>Bonus Tax Calculator Malaysia (Bonus Month Take-Home Estimate)</title>
+<meta name="description" content="Estimate how bonus may affect monthly income, EPF and possible PCB deductions.">
+<link rel="canonical" href="https://salarytoolsmy.com/bonus-tax-calculator-malaysia.html">
 <link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/salarytoolsmy-ui-fix.css">
 <style>
 .tool-page{background:#f6f8fb;}
 .tool-hero{padding:64px 20px;background:linear-gradient(115deg,#dbfff5 0%,#eef7ff 44%,#f8fafc 100%);}
@@ -80,29 +81,29 @@
   <div class="hero-inner">
     <div>
       <span class="tool-kicker">Free Malaysia calculator</span>
-      <h1>EIS Calculator Malaysia</h1>
-      <p class="lead">Estimate employee and employer EIS contribution amounts for Malaysia payroll planning.</p>
+      <h1>Bonus Tax Calculator Malaysia</h1>
+      <p class="lead">Estimate how a bonus may change take-home pay after common payroll deductions.</p>
       <div class="hero-actions">
         <a class="button" href="/salary-calculator-malaysia.html">Calculate Take-Home Pay</a>
         <a class="button secondary" href="/salary-guides-malaysia.html">Read Salary Guides</a>
       </div>
     </div>
     <div class="tool-card">
-      <h2>EIS Contribution Estimate</h2>
+      <h2>Bonus Month Estimate</h2>
       <div class="form-grid">
-  <div><label>Monthly Salary (RM)</label><input id="eisSalary" type="number" value="3000"></div>
-  <div><label>Wage Ceiling (RM)</label><input id="eisCeiling" type="number" value="6000"></div>
-  <div><label>Employee EIS Rate (%)</label><input id="eisRate" type="number" value="0.2" step="0.1"></div>
-  <div><label>Employer EIS Rate (%)</label><input id="eisEmployerRate" type="number" value="0.2" step="0.1"></div>
+  <div><label>Monthly Salary (RM)</label><input id="bonusSalary" type="number" value="5000"></div>
+  <div><label>Bonus Amount (RM)</label><input id="bonusAmount" type="number" value="5000"></div>
+  <div><label>EPF Rate (%)</label><input id="bonusEpf" type="number" value="11"></div>
+  <div><label>Other Monthly Pay (RM)</label><input id="otherPay" type="number" value="0"></div>
 </div>
-      <button onclick="calcEISTool()">Calculate Estimate</button>
-      <div id="eisResult" class="tool-result"><p>Your estimate will appear here.</p><p>💰 <strong>This is a simplified planning estimate.</strong></p></div>
+      <button onclick="calcBonusTool()">Calculate Estimate</button>
+      <div id="bonusResult" class="tool-result"><p>Your estimate will appear here.</p><p>💰 <strong>This is a simplified planning estimate.</strong></p></div>
     </div>
   </div>
 </section>
 <section class="tool-section">
   <div class="container content-wrap">
-    <div class="info-card"><h2>How this EIS calculator works</h2><p>This calculator estimates Employment Insurance System contribution using a selected wage ceiling and contribution rate. Actual EIS contribution should follow official PERKESO schedules.</p></div><div class="info-card"><h2>Why EIS appears on payslips</h2><p>EIS is commonly shown as a small payroll deduction. It is separate from EPF and SOCSO and may be contributed by both employee and employer.</p></div><div class="info-card faq"><h2>EIS calculator FAQ</h2><details open><summary>Is EIS the same as SOCSO?</summary><p>No. EIS and SOCSO are different items, although both are administered under PERKESO-related contribution systems.</p></details></div>
+    <div class="info-card"><h2>How this bonus tax calculator works</h2><p>This tool compares a normal month with a bonus month. It estimates how bonus may affect EPF and possible PCB for take-home pay planning.</p></div><div class="info-card"><h2>Why bonus month salary may be different</h2><p>When bonus is paid, gross pay increases for that month. Payroll deductions and PCB may also increase depending on employer payroll method and tax calculation.</p></div><div class="info-card faq"><h2>Bonus calculator FAQ</h2><details open><summary>Is bonus taxable in Malaysia?</summary><p>Bonus may be treated as employment income and can affect monthly PCB and annual tax. This calculator is only a simplified estimate.</p></details></div>
     <div class="info-card">
       <h2>Related Malaysia salary tools</h2>
       <p>Use these tools and guides together to understand salary, payroll deductions and estimated take-home pay in Malaysia.</p>
@@ -111,7 +112,11 @@
   <a href="/net-salary-calculator-malaysia.html">Take-Home Pay Calculator</a>
   <a href="/epf-calculator-malaysia.html">EPF Calculator</a>
   <a href="/socso-calculator-malaysia.html">SOCSO Calculator</a>
+  <a href="/eis-calculator-malaysia.html">EIS Calculator</a>
+  <a href="/income-tax-calculator-malaysia.html">Income Tax Calculator</a>
   <a href="/pcb-calculator-malaysia.html">PCB Tax Calculator</a>
+  <a href="/overtime-calculator-malaysia.html">Overtime Calculator</a>
+  <a href="/bonus-tax-calculator-malaysia.html">Bonus Tax Calculator</a>
   <a href="/salary-guides-malaysia.html">Salary Guides</a>
 </div>
     </div>
@@ -181,10 +186,11 @@ function salaryCore(monthly, epfRate, bonus=0, overtime=0){
 }
 </script>
 <script>
-function calcEISTool(){
- const salary=num('eisSalary'), ceiling=num('eisCeiling') || 6000, wage=Math.min(salary,ceiling);
- const emp=wage*num('eisRate')/100, employer=wage*num('eisEmployerRate')/100;
- setResult('eisResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Salary used for estimate</td><td>${rm(wage)}</td></tr><tr><td>Employee EIS estimate</td><td>${rm(emp)}</td></tr><tr><td>Employer EIS estimate</td><td>${rm(employer)}</td></tr><tr><td>Total EIS estimate</td><td><strong>${rm(emp+employer)}</strong></td></tr></table>`);
+function calcBonusTool(){
+ const salary=num('bonusSalary'), bonus=num('bonusAmount'), other=num('otherPay'), epfRate=num('bonusEpf');
+ const normal=salaryCore(salary, epfRate, 0, other);
+ const withBonus=salaryCore(salary, epfRate, bonus, other);
+ setResult('bonusResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Normal estimated take-home pay</td><td>${rm(normal.net)}</td></tr><tr><td>Bonus month gross pay</td><td>${rm(withBonus.gross)}</td></tr><tr><td>Estimated bonus month deductions</td><td>${rm(withBonus.epf+withBonus.socso+withBonus.eis+withBonus.pcb)}</td></tr><tr><td><strong>Estimated bonus month take-home pay</strong></td><td><strong>${rm(withBonus.net)}</strong></td></tr></table><p>Bonus can increase PCB in the bonus month. Actual payroll calculation may differ.</p>`);
 }
 </script>
 </body>

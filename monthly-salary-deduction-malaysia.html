@@ -3,29 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Monthly Salary Deduction in Malaysia: EPF, SOCSO, EIS and PCB</title>
-<meta name="description" content="A simple guide to monthly salary deductions in Malaysia, including EPF, SOCSO, EIS and PCB for employees.">
-<link rel="canonical" href="https://salarytoolsmy.com/monthly-salary-deduction-malaysia.html">
+<title>Take-Home Pay Calculator Malaysia (After EPF, SOCSO & Tax)</title>
+<meta name="description" content="Calculate your real take-home salary in Malaysia after EPF, SOCSO, EIS and tax deductions. Find out exactly how much you earn each month.">
+<link rel="canonical" href="https://salarytoolsmy.com/">
 <link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/salarytoolsmy-ui-fix.css">
 <script defer src="/assets/script.js"></script>
-<style>
-.article-wrap{max-width:960px;margin:0 auto;}
-.article-meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;}
-.article-content h2{color:#001f4d;margin-top:32px;margin-bottom:12px;}
-.article-content h3{color:#001f4d;margin-top:22px;margin-bottom:8px;}
-.article-content p,.article-content li{line-height:1.75;color:#243b53;}
-.article-content ul{padding-left:22px;}
-.salary-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(15,23,42,.06);margin:18px 0 26px;}
-.salary-table th,.salary-table td{padding:14px 16px;border-bottom:1px solid #e5edf6;text-align:left;vertical-align:top;}
-.salary-table th{background:#eff6ff;color:#001f4d;font-weight:800;}
-.salary-table tr:last-child td{border-bottom:0;}
-.note-box{background:#f8fafc;border:1px solid #dbe3ef;border-radius:18px;padding:20px;margin:22px 0;}
-.related-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px;}
-.related-list a{display:block;padding:14px 16px;background:#fff;border:1px solid #dbe3ef;border-radius:14px;text-decoration:none;color:#001f4d;font-weight:700;}
-.related-list a:hover{border-color:#8bd8ca;}
-@media(max-width:700px){.related-list{grid-template-columns:1fr}.salary-table{font-size:14px}.salary-table th,.salary-table td{padding:12px 10px}}
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Monthly Salary Deduction in Malaysia: EPF, SOCSO, EIS and PCB","description":"A simple guide to monthly salary deductions in Malaysia, including EPF, SOCSO, EIS and PCB for employees.","author":{"@type":"Organization","name":"SalaryToolsMY"},"publisher":{"@type":"Organization","name":"SalaryToolsMY"}}</script>
 </head>
 <body>
 <header class="site-header">
@@ -58,53 +41,76 @@
     <a href="/salary-guides-malaysia.html">Salary Guides</a>
   </div>
 </div>
-<main>
-<div class="container article-wrap">
-  <div class="section-title">
+
+<section class="hero">
+  <div class="hero-inner">
     <div>
-      <span class="badge">Malaysia salary guide</span>
-      <h1>Monthly Salary Deduction in Malaysia</h1>
-      <p>A simple guide to monthly salary deductions in Malaysia, including EPF, SOCSO, EIS and PCB for employees.</p>
-      <div class="article-meta"><span class="badge">EPF</span><span class="badge">SOCSO</span><span class="badge">EIS</span><span class="badge">PCB</span></div>
+      <p class="eyebrow">Malaysia payroll & salary tools</p>
+      <h1>Calculate Your Real Take-Home Salary in Malaysia</h1>
+      <p class="lead">Estimate your real monthly take-home salary after EPF, SOCSO, EIS and PCB deductions. See how much you actually receive each month.</p>
+      <div class="hero-actions">
+        <a class="button" href="/salary-calculator-malaysia.html">Check Your Take-Home Pay Now</a>
+        <a class="button secondary" href="#tools">Browse Salary Tools</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h2>Quick Salary Estimate</h2>
+      <div class="form-grid">
+        <div><label>Monthly Salary (RM)</label><input id="salary" type="number" value="3000"></div>
+        <div><label>EPF Rate (%)</label><input id="epfRate" type="number" value="11"></div>
+        <div><label>Bonus (RM)</label><input id="bonus" type="number" value="0"></div>
+        <div><label>Overtime Pay (RM)</label><input id="ot" type="number" value="0"></div>
+      </div>
+      <button onclick="salaryBreakdown()">Calculate Estimate</button>
+      <div id="homeResult" class="result-box"><p>Enter your salary details to see an estimate.</p></div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="container article-wrap">
-  <div class="callout"><h2>Direct answer</h2><p>Monthly salary deductions in Malaysia commonly include EPF, SOCSO, EIS and PCB. These deductions explain why take-home pay is lower than gross salary.</p></div>
-  <div class="article-content">
-    <h2>Quick summary</h2>
-    <table class="salary-table">
-      <thead><tr><th>Topic</th><th>Explanation</th></tr></thead>
-      <tbody><tr><td>EPF deduction</td><td>EPF is a retirement savings contribution. For many employees, this is the largest regular salary deduction.</td></tr><tr><td>SOCSO deduction</td><td>SOCSO provides social security protection for eligible employees and is usually processed by the employer.</td></tr><tr><td>EIS deduction</td><td>EIS is related to employment insurance protection and is normally a small monthly deduction for eligible employees.</td></tr><tr><td>PCB deduction</td><td>PCB is a monthly tax deduction. It depends on taxable income and employee tax profile, so it can differ from one employee to another.</td></tr></tbody>
-    </table>
-    <h2>EPF deduction</h2><p>EPF is a retirement savings contribution. For many employees, this is the largest regular salary deduction.</p><h2>SOCSO deduction</h2><p>SOCSO provides social security protection for eligible employees and is usually processed by the employer.</p><h2>EIS deduction</h2><p>EIS is related to employment insurance protection and is normally a small monthly deduction for eligible employees.</p><h2>PCB deduction</h2><p>PCB is a monthly tax deduction. It depends on taxable income and employee tax profile, so it can differ from one employee to another.</p>
-    <div class="note-box"><h3>Planning note</h3><p>This guide is for salary planning and education only. Always use your payslip, employer payroll details and official sources for final payroll or tax decisions.</p></div>
+<div class="container" id="tools">
+  <div class="section-title">
+    <div><h2>Free Malaysia Salary Tools</h2><p>Use these calculators for salary, payroll and take-home pay planning.</p></div>
   </div>
+  <div class="grid"><a class="card" href="/salary-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Salary Calculator Malaysia</h3><p>Estimate gross salary, common payroll deductions and take-home pay in Malaysia.</p></a>
+<a class="card" href="/net-salary-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Take-Home Pay Calculator Malaysia</h3><p>See how much salary you actually take home after EPF, SOCSO, EIS and tax deductions.</p></a>
+<a class="card" href="/epf-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>EPF Calculator Malaysia</h3><p>Estimate employee and employer EPF contributions for Malaysia salary planning.</p></a>
+<a class="card" href="/socso-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>SOCSO Calculator Malaysia</h3><p>Estimate SOCSO contribution for Malaysia payroll planning.</p></a>
+<a class="card" href="/eis-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>EIS Calculator Malaysia</h3><p>Estimate Employment Insurance System contribution for employees in Malaysia.</p></a>
+<a class="card" href="/income-tax-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Income Tax Calculator Malaysia</h3><p>Estimate annual income tax and monthly tax planning figures for Malaysia.</p></a>
+<a class="card" href="/pcb-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>PCB Calculator Malaysia</h3><p>Estimate monthly PCB tax deduction for salary planning in Malaysia.</p></a>
+<a class="card" href="/overtime-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Overtime Calculator Malaysia</h3><p>Estimate overtime pay using monthly salary and overtime hours.</p></a>
+<a class="card" href="/bonus-tax-calculator-malaysia.html"><span class="badge">Free Tool</span><h3>Bonus Tax Calculator Malaysia</h3><p>Estimate how a bonus may affect monthly income and payroll deductions.</p></a></div>
 </div>
 
 <div class="container">
   <div class="callout">
-    <h2>Use the Malaysia salary calculators</h2>
-    <p>These guides are for general salary planning. Use the calculators below to estimate your own numbers based on your salary, EPF rate and payroll situation.</p>
-    <div class="related-list">
-      <a href="/salary-calculator-malaysia.html">Malaysia Salary Calculator</a>
-      <a href="/net-salary-calculator-malaysia.html">Take-Home Pay Calculator</a>
-      <a href="/epf-calculator-malaysia.html">EPF Calculator Malaysia</a>
-      <a href="/socso-calculator-malaysia.html">SOCSO Calculator Malaysia</a>
-      <a href="/pcb-calculator-malaysia.html">PCB Calculator Malaysia</a>
-      <a href="/salary-guides-malaysia.html">All Salary Guides</a>
-    </div>
+    <h2>Understand Your Real Take-Home Pay</h2>
+    <p>Gross salary is not the same as take-home pay. EPF, SOCSO, EIS and PCB may affect the final amount you receive each month.</p>
   </div>
 </div>
 
-<div class="container faq article-wrap">
-  <h2>Frequently Asked Questions</h2>
-  <details open><summary>Is this guide official payroll advice?</summary><p>No. SalaryToolsMY provides simplified explanations for general planning. Official calculations should come from payroll, EPF, SOCSO or LHDN references.</p></details>
-  <details><summary>Can I use this guide to estimate take-home pay?</summary><p>Yes, it can help you understand the deduction logic. Use the calculator pages for a more personalised salary estimate.</p></details>
-  <details><summary>Why do salary deductions vary?</summary><p>Deductions can vary because salary amount, EPF rate, tax profile, reliefs, bonus, overtime and payroll setup may differ.</p></details>
+<div class="container">
+  <div class="section-title"><div><h2>Malaysia Salary Guides & Examples</h2><p>High-quality salary examples and deduction guides for EPF, SOCSO, EIS, PCB and take-home pay planning.</p></div></div>
+  <div class="grid">
+    <a class="card" href="/salary-guides-malaysia.html"><span class="badge">Guides</span><h3>All Salary Guides &amp; Examples</h3><p>Browse all Malaysia salary breakdown pages and deduction guides in one place.</p></a>
+    <a class="card" href="/salary-3000-malaysia.html"><span class="badge">Salary Example</span><h3>RM3,000 Salary After Deductions</h3><p>Estimate how EPF, SOCSO, EIS and possible PCB affect a RM3,000 salary.</p></a>
+    <a class="card" href="/salary-5000-malaysia.html"><span class="badge">Salary Example</span><h3>RM5,000 Salary Take-Home Pay</h3><p>Understand estimated net salary after common payroll deductions.</p></a>
+    <a class="card" href="/salary-8000-malaysia.html"><span class="badge">Salary Example</span><h3>RM8,000 Salary After Deductions</h3><p>See why PCB and net salary planning matter more at higher income levels.</p></a>
+    <a class="card" href="/gross-salary-vs-net-salary-malaysia.html"><span class="badge">Guide</span><h3>Gross Salary vs Net Salary</h3><p>Learn why offer letter salary and bank-in salary are different.</p></a>
+    <a class="card" href="/epf-socso-eis-pcb-explained-malaysia.html"><span class="badge">Guide</span><h3>EPF, SOCSO, EIS &amp; PCB Explained</h3><p>A simple guide to common Malaysia salary deduction terms.</p></a>
+    <a class="card" href="/how-to-calculate-take-home-pay-malaysia.html"><span class="badge">Guide</span><h3>How to Calculate Take-Home Pay</h3><p>Understand how gross salary becomes estimated net salary.</p></a>
+    <a class="card" href="/why-my-salary-is-less-than-offer-letter-malaysia.html"><span class="badge">Guide</span><h3>Why Salary Is Less Than Offer Letter</h3><p>Find out why your monthly bank-in amount may be lower than expected.</p></a>
+    <a class="card" href="/pcb-deduction-from-salary-malaysia.html"><span class="badge">Guide</span><h3>PCB Deduction from Salary</h3><p>Learn how monthly tax deduction may affect take-home pay.</p></a>
+  </div>
 </div>
-</main>
+
+<div class="container faq">
+  <h2>Frequently Asked Questions</h2>
+  <details open><summary>Is this salary calculator official?</summary><p>No. SalaryToolsMY provides simplified estimation tools for general planning only. Always refer to official sources or payroll professionals for final calculations.</p></details>
+  <details><summary>Can I use this to estimate take-home pay?</summary><p>Yes, the tools can help estimate common salary deductions such as EPF, SOCSO, EIS and rough PCB, but actual results may vary.</p></details>
+  <details><summary>Does SalaryToolsMY store my salary data?</summary><p>No account is required. Calculations run in your browser and are intended for quick estimation.</p></details>
+</div>
+
 <footer class="footer">
   <div class="footer-inner">
     <div>
@@ -122,6 +128,7 @@
       <h3>Guides</h3>
       <p><a href="/salary-guides-malaysia.html">Salary Guides</a></p>
       <p><a href="/salary-3000-malaysia.html">RM3,000 Salary</a></p>
+      <p><a href="/salary-5000-malaysia.html">RM5,000 Salary</a></p>
       <p><a href="/gross-salary-vs-net-salary-malaysia.html">Gross vs Net Salary</a></p>
     </div>
     <div>

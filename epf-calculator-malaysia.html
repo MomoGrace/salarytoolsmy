@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EPF Calculator Malaysia (Employee &amp; Employer Contribution Estimate)</title>
-<meta name="description" content="Estimate employee and employer EPF contributions for Malaysia salary planning.">
-<link rel="canonical" href="https://salarytoolsmy.com/epf-calculator-malaysia.html">
+<title>EIS Calculator Malaysia (Employment Insurance Estimate)</title>
+<meta name="description" content="Estimate Employment Insurance System contribution for employees in Malaysia.">
+<link rel="canonical" href="https://salarytoolsmy.com/eis-calculator-malaysia.html">
 <link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="/assets/salarytoolsmy-ui-fix.css">
 <style>
 .tool-page{background:#f6f8fb;}
 .tool-hero{padding:64px 20px;background:linear-gradient(115deg,#dbfff5 0%,#eef7ff 44%,#f8fafc 100%);}
@@ -80,35 +81,33 @@
   <div class="hero-inner">
     <div>
       <span class="tool-kicker">Free Malaysia calculator</span>
-      <h1>EPF Calculator Malaysia</h1>
-      <p class="lead">Estimate monthly EPF employee and employer contribution amounts for salary planning.</p>
+      <h1>EIS Calculator Malaysia</h1>
+      <p class="lead">Estimate employee and employer EIS contribution amounts for Malaysia payroll planning.</p>
       <div class="hero-actions">
         <a class="button" href="/salary-calculator-malaysia.html">Calculate Take-Home Pay</a>
         <a class="button secondary" href="/salary-guides-malaysia.html">Read Salary Guides</a>
       </div>
     </div>
     <div class="tool-card">
-      <h2>EPF Contribution Estimate</h2>
+      <h2>EIS Contribution Estimate</h2>
       <div class="form-grid">
-  <div><label>Monthly Salary (RM)</label><input id="epfSalary" type="number" value="3000"></div>
-  <div><label>Employee EPF Rate (%)</label><input id="employeeRate" type="number" value="11"></div>
-  <div><label>Employer EPF Rate (%)</label><input id="employerRate" type="number" value="13"></div>
-  <div><label>Months</label><input id="months" type="number" value="12"></div>
+  <div><label>Monthly Salary (RM)</label><input id="eisSalary" type="number" value="3000"></div>
+  <div><label>Wage Ceiling (RM)</label><input id="eisCeiling" type="number" value="6000"></div>
+  <div><label>Employee EIS Rate (%)</label><input id="eisRate" type="number" value="0.2" step="0.1"></div>
+  <div><label>Employer EIS Rate (%)</label><input id="eisEmployerRate" type="number" value="0.2" step="0.1"></div>
 </div>
-      <button onclick="calcEPFTool()">Calculate Estimate</button>
-      <div id="epfResult" class="tool-result"><p>Your estimate will appear here.</p><p>💰 <strong>This is a simplified planning estimate.</strong></p></div>
+      <button onclick="calcEISTool()">Calculate Estimate</button>
+      <div id="eisResult" class="tool-result"><p>Your estimate will appear here.</p><p>💰 <strong>This is a simplified planning estimate.</strong></p></div>
     </div>
   </div>
 </section>
 <section class="tool-section">
   <div class="container content-wrap">
-    <div class="info-card"><h2>How this EPF calculator works</h2><p>Enter a monthly salary and EPF contribution rates to estimate employee and employer EPF contribution amounts. Malaysian employees below 60 commonly use an employee contribution rate of 11%, while employer rates may differ based on salary band and eligibility.</p></div>
-<div class="info-card"><h2>When to use this tool</h2><p>Use this EPF calculator when comparing job offers, checking payroll deductions or estimating retirement contribution amounts for planning.</p></div>
-<div class="info-card faq"><h2>EPF calculator FAQ</h2><details open><summary>Is EPF calculated from gross salary?</summary><p>EPF is generally calculated from wages that are subject to EPF contribution. This simplified calculator uses the monthly salary entered by the user.</p></details><details><summary>Is this the official EPF calculation?</summary><p>No. This is a simplified estimate. Final contribution should follow KWSP contribution schedules and payroll rules.</p></details></div>
+    <div class="info-card"><h2>How this EIS calculator works</h2><p>This calculator estimates Employment Insurance System contribution using a selected wage ceiling and contribution rate. Actual EIS contribution should follow official PERKESO schedules.</p></div><div class="info-card"><h2>Why EIS appears on payslips</h2><p>EIS is commonly shown as a small payroll deduction. It is separate from EPF and SOCSO and may be contributed by both employee and employer.</p></div><div class="info-card faq"><h2>EIS calculator FAQ</h2><details open><summary>Is EIS the same as SOCSO?</summary><p>No. EIS and SOCSO are different items, although both are administered under PERKESO-related contribution systems.</p></details></div>
     <div class="info-card">
       <h2>Related Malaysia salary tools</h2>
       <p>Use these tools and guides together to understand salary, payroll deductions and estimated take-home pay in Malaysia.</p>
-      <div class="related-list">
+      <div class="related-grid">
   <a href="/salary-calculator-malaysia.html">Salary Calculator</a>
   <a href="/net-salary-calculator-malaysia.html">Take-Home Pay Calculator</a>
   <a href="/epf-calculator-malaysia.html">EPF Calculator</a>
@@ -120,7 +119,6 @@
   <a href="/bonus-tax-calculator-malaysia.html">Bonus Tax Calculator</a>
   <a href="/salary-guides-malaysia.html">Salary Guides</a>
 </div>
-     
     </div>
     <div class="notice">Important: SalaryToolsMY provides simplified estimates for general planning only. Actual EPF, SOCSO, EIS and PCB amounts may vary based on official contribution schedules, tax profile, payroll settings and employer calculation.</div>
   </div>
@@ -188,10 +186,10 @@ function salaryCore(monthly, epfRate, bonus=0, overtime=0){
 }
 </script>
 <script>
-function calcEPFTool(){
- const salary=num('epfSalary'), er=num('employeeRate'), mr=num('employerRate'), months=Math.max(1,num('months'));
- const employee=salary*er/100, employer=salary*mr/100, total=employee+employer;
- setResult('epfResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Employee EPF per month</td><td>${rm(employee)}</td></tr><tr><td>Employer EPF per month</td><td>${rm(employer)}</td></tr><tr><td>Total EPF per month</td><td>${rm(total)}</td></tr><tr><td>Total for ${months} months</td><td><strong>${rm(total*months)}</strong></td></tr></table>`);
+function calcEISTool(){
+ const salary=num('eisSalary'), ceiling=num('eisCeiling') || 6000, wage=Math.min(salary,ceiling);
+ const emp=wage*num('eisRate')/100, employer=wage*num('eisEmployerRate')/100;
+ setResult('eisResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Salary used for estimate</td><td>${rm(wage)}</td></tr><tr><td>Employee EIS estimate</td><td>${rm(emp)}</td></tr><tr><td>Employer EIS estimate</td><td>${rm(employer)}</td></tr><tr><td>Total EIS estimate</td><td><strong>${rm(emp+employer)}</strong></td></tr></table>`);
 }
 </script>
 </body>
