@@ -288,3 +288,19 @@ th{background:#f8fafc}
 .cta-panel .button{background:#fff;color:#0f766e;box-shadow:none}
 .cta-panel .button:hover{background:#ecfdf5}
 .keyword-table td,.keyword-table th{font-size:.96rem}
+
+
+/* High CTR copy upgrade */
+.nav-cta {
+  font-weight: 900;
+}
+.button {
+  font-size: 1rem;
+}
+.result-box::after {
+  content: "💰 This is an estimate of your salary after common deductions.";
+  display: block;
+  margin-top: 10px;
+  font-weight: 700;
+  color: #0f766e;
+}
