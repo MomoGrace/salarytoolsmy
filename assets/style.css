@@ -301,3 +301,45 @@ th{background:#f8fafc}
   font-weight: 700;
   color: #0f766e;
 }
+/* Unified related tools boxes - 2 columns */
+.callout .related-grid,
+.info-card .related-grid,
+.callout .related-list,
+.info-card .related-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.callout .related-grid a,
+.info-card .related-grid a,
+.callout .related-list a,
+.info-card .related-list a {
+  display: block;
+  background: #fff;
+  border: 1px solid #dbe3ef;
+  border-radius: 16px;
+  padding: 18px;
+  text-decoration: none;
+  color: #001f4d;
+  font-weight: 800;
+  box-shadow: 0 8px 22px rgba(15,23,42,.04);
+}
+
+.callout .related-grid a:hover,
+.info-card .related-grid a:hover,
+.callout .related-list a:hover,
+.info-card .related-list a:hover {
+  border-color: #8bd8ca;
+  transform: translateY(-2px);
+}
+
+@media(max-width:700px){
+  .callout .related-grid,
+  .info-card .related-grid,
+  .callout .related-list,
+  .info-card .related-list {
+    grid-template-columns: 1fr;
+  }
+}
