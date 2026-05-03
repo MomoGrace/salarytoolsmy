@@ -1,11 +1,28 @@
-function money(n){return 'RM ' + Number(n||0).toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});}
-function val(id){return parseFloat(document.getElementById(id)?.value)||0;}
-function epfEmployee(s){return s<=5000?s*0.11:s*0.11;}function epfEmployer(s){return s<=5000?s*0.13:s*0.12;}function socso(s){return Math.min(s*0.005,25);}function eis(s){return Math.min(s*0.002,10);}function simpleTax(annual){let tax=0;let brackets=[[5000,0],[15000,.01],[15000,.03],[15000,.08],[15000,.13],[15000,.21],[300000,.24],[Infinity,.25]];let rem=Math.max(0,annual-5000);for(const [band,rate] of brackets.slice(1)){let amt=Math.min(rem,band);if(amt>0)tax+=amt*rate;rem-=amt;if(rem<=0)break;}return tax;}
-function salaryCalc(){let s=val('salary');let epf=epfEmployee(s), so=socso(s), ei=eis(s);let net=s-epf-so-ei;document.getElementById('result').innerHTML=`Gross salary: ${money(s)}<br>Estimated EPF: ${money(epf)}<br>Estimated SOCSO: ${money(so)}<br>Estimated EIS: ${money(ei)}<br>Estimated take-home before tax: ${money(net)}`;}
-function epfCalc(){let s=val('salary');document.getElementById('result').innerHTML=`Employee EPF estimate: ${money(epfEmployee(s))}<br>Employer EPF estimate: ${money(epfEmployer(s))}<br>Total monthly EPF estimate: ${money(epfEmployee(s)+epfEmployer(s))}`;}
-function socsoCalc(){let s=val('salary');document.getElementById('result').innerHTML=`Estimated SOCSO contribution: ${money(socso(s))}`;}
-function eisCalc(){let s=val('salary');document.getElementById('result').innerHTML=`Estimated EIS contribution: ${money(eis(s))}`;}
-function taxCalc(){let annual=val('annual');let relief=val('relief');let taxable=Math.max(0,annual-relief);let tax=simpleTax(taxable);document.getElementById('result').innerHTML=`Estimated taxable income: ${money(taxable)}<br>Estimated annual tax: ${money(tax)}<br>Estimated monthly tax: ${money(tax/12)}`;}
-function pcbCalc(){let annual=val('annual');let relief=val('relief');let tax=simpleTax(Math.max(0,annual-relief));document.getElementById('result').innerHTML=`Estimated monthly PCB: ${money(tax/12)}<br>Estimated annual tax: ${money(tax)}`;}
-function overtimeCalc(){let hourly=val('hourly'), hours=val('hours'), mult=val('multiplier')||1.5;document.getElementById('result').innerHTML=`Estimated overtime pay: ${money(hourly*hours*mult)}`;}
-function bonusCalc(){let salary=val('salary'), bonus=val('bonus'), relief=val('relief');let annual=salary*12+bonus;let tax=simpleTax(Math.max(0,annual-relief));document.getElementById('result').innerHTML=`Estimated annual income with bonus: ${money(annual)}<br>Estimated annual tax: ${money(tax)}<br>Estimated bonus before deductions: ${money(bonus)}`;}
+
+function money(n){return 'RM ' + (Number(n)||0).toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function calcGeneric(type){
+  const salary = Number(document.querySelector('[data-salary]')?.value || 0);
+  const hours = Number(document.querySelector('[data-hours]')?.value || 0);
+  const bonus = Number(document.querySelector('[data-bonus]')?.value || 0);
+  let html = '';
+  if(type==='salary'){
+    const epf=salary*0.11, socso=Math.min(salary*0.005,25), eis=Math.min(salary*0.002,10);
+    html = `<p><strong>Gross salary:</strong> ${money(salary)}</p><p><strong>Estimated EPF:</strong> ${money(epf)}</p><p><strong>Estimated SOCSO:</strong> ${money(socso)}</p><p><strong>Estimated EIS:</strong> ${money(eis)}</p><p><strong>Estimated take-home before PCB:</strong> ${money(salary-epf-socso-eis)}</p>`;
+  } else if(type==='epf'){
+    html = `<p><strong>Employee EPF estimate:</strong> ${money(salary*0.11)}</p><p><strong>Employer EPF estimate:</strong> ${money(salary*0.13)}</p>`;
+  } else if(type==='socso'){
+    html = `<p><strong>Estimated employee SOCSO:</strong> ${money(Math.min(salary*0.005,25))}</p><p class="note">Actual SOCSO follows official wage schedules.</p>`;
+  } else if(type==='eis'){
+    html = `<p><strong>Estimated employee EIS:</strong> ${money(Math.min(salary*0.002,10))}</p>`;
+  } else if(type==='tax' || type==='pcb'){
+    const annual=salary*12, taxable=Math.max(0,annual-9000), tax=Math.max(0,taxable*0.03);
+    html = `<p><strong>Estimated annual income:</strong> ${money(annual)}</p><p><strong>Very rough annual tax estimate:</strong> ${money(tax)}</p><p><strong>Rough monthly PCB:</strong> ${money(tax/12)}</p>`;
+  } else if(type==='overtime'){
+    const hourly=salary/26/8, ot=hourly*1.5*hours;
+    html = `<p><strong>Estimated hourly rate:</strong> ${money(hourly)}</p><p><strong>Estimated overtime pay:</strong> ${money(ot)}</p>`;
+  } else if(type==='bonus'){
+    const total=salary+bonus;
+    html = `<p><strong>Monthly salary:</strong> ${money(salary)}</p><p><strong>Bonus:</strong> ${money(bonus)}</p><p><strong>Total for bonus month:</strong> ${money(total)}</p>`;
+  }
+  document.getElementById('result').innerHTML=html;
+}
