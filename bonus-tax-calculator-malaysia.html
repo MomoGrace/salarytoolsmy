@@ -1,85 +1,75 @@
-/* SalaryToolsMY final unified UI patch
-   Safe add-on CSS: loaded after /assets/style.css. It does not replace your main stylesheet. */
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bonus Salary Malaysia Tax and Take-Home Pay</title>
+<meta name="description" content="Estimate how bonus salary may affect monthly income and tax planning in Malaysia.">
+<link rel="canonical" href="https://salarytoolsmy.com/bonus-salary-malaysia-tax.html">
+<link rel="stylesheet" href="/assets/style.css">
+<script defer src="/assets/script.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="/">SalaryToolsMY</a>
+    <nav class="tool-nav">
+      <a href="/salary-calculator-malaysia.html">Salary</a>
+      <a href="/epf-calculator-malaysia.html">EPF</a>
+      <a href="/socso-calculator-malaysia.html">SOCSO</a>
+      <a href="/pcb-calculator-malaysia.html">PCB Tax</a>
+      <a href="/net-salary-calculator-malaysia.html">Take-Home Pay</a>
+      <a href="/salary-calculator-malaysia.html" class="nav-cta">Calculate Your Take-Home Pay</a>
+    </nav>
+  </div>
+</header>
+<div class="quick-strip">
+  <div class="quick-strip-inner">
+    <strong>Quick tools:</strong>
+    <a href="/salary-calculator-malaysia.html">Salary Calculator</a>
+    <span>·</span>
+    <a href="/epf-calculator-malaysia.html">EPF Calculator</a>
+    <span>·</span>
+    <a href="/socso-calculator-malaysia.html">SOCSO Calculator</a>
+    <span>·</span>
+    <a href="/pcb-calculator-malaysia.html">PCB Tax Calculator</a>
+  </div>
+</div>
+<main>
+<div class="container">
+  <div class="content">
 
-/* Header / quick strip safety */
-.tool-nav,
-.quick-strip-inner {
-  flex-wrap: wrap;
-}
+<p class="eyebrow">Bonus salary guide</p>
+<h1>Bonus Salary Malaysia: Tax and Take-Home Pay</h1>
+<p>A bonus can increase your monthly income, but it may also affect estimated PCB and take-home pay. This guide explains the basic idea.</p>
+<h2>What happens when you receive a bonus?</h2><ul><li>Your gross pay for the month increases</li><li>PCB may increase for that month</li><li>Your net pay may be lower than expected after deductions</li></ul>
+<div class="cta-panel"><h2>Check bonus month pay</h2><p>Estimate how salary and bonus may look together.</p><p><a class="button" href="/bonus-tax-calculator-malaysia.html">Estimate Bonus Pay Now</a></p></div>
+<p class="note">This is not tax advice.</p>
 
-/* Footer: force 4-column desktop layout, 2-column tablet, 1-column mobile */
-.footer-inner {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr !important;
-  gap: 24px;
-  align-items: start;
-}
-
-.footer-inner > div {
-  min-width: 0;
-}
-
-/* Unified related tools card grids */
-.related-list,
-.related-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 18px;
-}
-
-.related-list a,
-.related-grid a {
-  display: block;
-  padding: 15px 17px;
-  border: 1px solid #dbe3ef;
-  border-radius: 14px;
-  background: #ffffff;
-  color: #001f4d;
-  font-weight: 800;
-  text-decoration: none;
-  line-height: 1.35;
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
-  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
-}
-
-.related-list a:hover,
-.related-grid a:hover {
-  border-color: #8bd8ca;
-  transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.08);
-}
-
-/* Keep green/CTA boxes attractive and consistent */
-.callout {
-  border-radius: 22px;
-}
-
-.info-card,
-.note-box,
-.tool-card,
-.hero-card,
-.card {
-  border-radius: 18px;
-}
-
-@media (max-width: 1100px) {
-  .footer-inner {
-    grid-template-columns: 1fr 1fr !important;
-  }
-}
-
-@media (max-width: 900px) {
-  .related-list,
-  .related-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 640px) {
-  .footer-inner,
-  .related-list,
-  .related-grid {
-    grid-template-columns: 1fr !important;
-  }
-}
+  </div>
+</div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <h3>SalaryToolsMY</h3>
+      <p>Free Malaysia salary and payroll estimation tools for employees, job seekers and small business planning.</p>
+    </div>
+    <div>
+      <h3>Tools</h3>
+      <p><a href="/salary-calculator-malaysia.html">Salary Calculator</a></p>
+      <p><a href="/epf-calculator-malaysia.html">EPF Calculator</a></p>
+      <p><a href="/pcb-calculator-malaysia.html">PCB Calculator</a></p>
+    </div>
+    <div>
+      <h3>Legal</h3>
+      <p><a href="/privacy-policy.html">Privacy Policy</a></p>
+      <p><a href="/terms.html">Terms</a></p>
+      <p><a href="/disclaimer.html">Disclaimer</a></p>
+      <p><a href="/contact.html">Contact</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 SalaryToolsMY. All calculators are for estimation only.</div>
+</footer>
+</body>
+</html>

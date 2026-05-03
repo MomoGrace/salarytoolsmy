@@ -3,32 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Monthly Salary Deduction in Malaysia: EPF, SOCSO, EIS and PCB</title>
-<meta name="description" content="A simple guide to monthly salary deductions in Malaysia, including EPF, SOCSO, EIS and PCB for employees.">
-<link rel="canonical" href="https://salarytoolsmy.com/monthly-salary-deduction-malaysia.html">
+<title>Take-Home Pay Calculator Malaysia (After EPF, SOCSO &amp; PCB)</title>
+<meta name="description" content="Estimate Malaysia take-home pay after EPF, SOCSO, EIS and PCB deductions using this simplified salary calculator.">
+<link rel="canonical" href="https://salarytoolsmy.com/net-salary-calculator-malaysia.html">
 <link rel="stylesheet" href="/assets/style.css">
-<link rel="stylesheet" href="/assets/salarytoolsmy-ui-fix.css">
-<script defer src="/assets/script.js"></script>
 <style>
-.article-wrap{max-width:960px;margin:0 auto;}
-.article-meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0;}
-.article-content h2{color:#001f4d;margin-top:32px;margin-bottom:12px;}
-.article-content h3{color:#001f4d;margin-top:22px;margin-bottom:8px;}
-.article-content p,.article-content li{line-height:1.75;color:#243b53;}
-.article-content ul{padding-left:22px;}
-.salary-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 10px 28px rgba(15,23,42,.06);margin:18px 0 26px;}
-.salary-table th,.salary-table td{padding:14px 16px;border-bottom:1px solid #e5edf6;text-align:left;vertical-align:top;}
-.salary-table th{background:#eff6ff;color:#001f4d;font-weight:800;}
-.salary-table tr:last-child td{border-bottom:0;}
-.note-box{background:#f8fafc;border:1px solid #dbe3ef;border-radius:18px;padding:20px;margin:22px 0;}
-.related-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px;}
-.related-list a{display:block;padding:14px 16px;background:#fff;border:1px solid #dbe3ef;border-radius:14px;text-decoration:none;color:#001f4d;font-weight:700;}
-.related-list a:hover{border-color:#8bd8ca;}
-@media(max-width:700px){.related-list{grid-template-columns:1fr}.salary-table{font-size:14px}.salary-table th,.salary-table td{padding:12px 10px}}
+.tool-page{background:#f6f8fb;}
+.tool-hero{padding:64px 20px;background:linear-gradient(115deg,#dbfff5 0%,#eef7ff 44%,#f8fafc 100%);}
+.tool-hero .hero-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1fr 520px;gap:42px;align-items:center;}
+.tool-hero h1{font-size:clamp(42px,5vw,68px);line-height:1.05;margin:14px 0 18px;color:#111827;letter-spacing:-.04em;}
+.tool-hero .lead{font-size:18px;line-height:1.75;color:#35506b;margin:0 0 24px;}
+.tool-kicker{display:inline-flex;align-items:center;background:#ccfbf1;color:#006b5f;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;}
+.tool-card{background:#fff;border:1px solid #dbe3ef;border-radius:22px;padding:28px;box-shadow:0 20px 48px rgba(15,23,42,.10);}
+.tool-card h2{font-size:26px;margin:0 0 18px;color:#001f4d;}
+.tool-card label{display:block;font-weight:800;margin-bottom:8px;color:#001f4d;}
+.tool-card input,.tool-card select{width:100%;box-sizing:border-box;border:1px solid #cbd5e1;border-radius:12px;padding:13px 14px;font-size:16px;background:#fff;}
+.tool-card button{margin-top:14px;background:#0f7f72;color:#fff;border:0;border-radius:12px;padding:14px 18px;font-weight:800;cursor:pointer;box-shadow:0 10px 24px rgba(15,127,114,.18);}
+.tool-card button:hover{background:#0b695f;}
+.tool-result{margin-top:18px;background:#ecfdf8;border:1px solid #75f0dc;border-radius:16px;padding:18px;line-height:1.7;color:#001f4d;}
+.tool-result strong{color:#006b5f;}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.content-wrap{max-width:960px;margin:0 auto;}
+.tool-section{padding:48px 20px;}
+.tool-section .container{max-width:1120px;margin:0 auto;}
+.info-card{background:#fff;border:1px solid #dbe3ef;border-radius:20px;padding:28px;margin:18px 0;box-shadow:0 10px 28px rgba(15,23,42,.05);}
+.info-card h2,.info-card h3{color:#001f4d;margin-top:0;}
+.info-card p,.info-card li{color:#243b53;line-height:1.75;}
+.tool-table{width:100%;border-collapse:collapse;background:#fff;border-radius:16px;overflow:hidden;margin:18px 0;box-shadow:0 8px 22px rgba(15,23,42,.05);}
+.tool-table th,.tool-table td{padding:14px 16px;text-align:left;border-bottom:1px solid #e5edf6;vertical-align:top;}
+.tool-table th{background:#eff6ff;color:#001f4d;font-weight:900;}
+.tool-table tr:last-child td{border-bottom:0;}
+.related-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px;}
+.related-grid a{display:block;background:#fff;border:1px solid #dbe3ef;border-radius:16px;padding:18px;text-decoration:none;color:#001f4d;font-weight:800;box-shadow:0 8px 22px rgba(15,23,42,.04);}
+.related-grid a:hover{border-color:#8bd8ca;transform:translateY(-2px);}
+.notice{background:#fff7ed;border:1px solid #fed7aa;border-radius:18px;padding:18px;color:#7c2d12;line-height:1.7;}
+.faq details{background:#fff;border:1px solid #dbe3ef;border-radius:16px;padding:16px 18px;margin:12px 0;}
+.faq summary{font-weight:900;color:#001f4d;cursor:pointer;}
+.faq p{color:#243b53;line-height:1.75;}
+@media(max-width:920px){.tool-hero .hero-inner{grid-template-columns:1fr}.tool-card{max-width:680px}.related-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:640px){.tool-hero{padding:44px 16px}.form-grid,.related-grid{grid-template-columns:1fr}.tool-card{padding:22px}.tool-table{font-size:14px}.tool-table th,.tool-table td{padding:12px 10px}}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Monthly Salary Deduction in Malaysia: EPF, SOCSO, EIS and PCB","description":"A simple guide to monthly salary deductions in Malaysia, including EPF, SOCSO, EIS and PCB for employees.","author":{"@type":"Organization","name":"SalaryToolsMY"},"publisher":{"@type":"Organization","name":"SalaryToolsMY"}}</script>
 </head>
-<body>
+<body class="tool-page">
 <header class="site-header">
   <div class="header-inner">
     <a class="logo" href="/">SalaryToolsMY</a>
@@ -60,55 +76,66 @@
   </div>
 </div>
 <main>
-<div class="container article-wrap">
-  <div class="section-title">
+<section class="tool-hero">
+  <div class="hero-inner">
     <div>
-      <span class="badge">Malaysia salary guide</span>
-      <h1>Monthly Salary Deduction in Malaysia</h1>
-      <p>A simple guide to monthly salary deductions in Malaysia, including EPF, SOCSO, EIS and PCB for employees.</p>
-      <div class="article-meta"><span class="badge">EPF</span><span class="badge">SOCSO</span><span class="badge">EIS</span><span class="badge">PCB</span></div>
+      <span class="tool-kicker">Free Malaysia calculator</span>
+      <h1>Take-Home Pay Calculator Malaysia</h1>
+      <p class="lead">Estimate your real monthly take-home salary after EPF, SOCSO, EIS and possible PCB deductions.</p>
+      <div class="hero-actions">
+        <a class="button" href="/salary-calculator-malaysia.html">Calculate Take-Home Pay</a>
+        <a class="button secondary" href="/salary-guides-malaysia.html">Read Salary Guides</a>
+      </div>
+    </div>
+    <div class="tool-card">
+      <h2>Quick Take-Home Estimate</h2>
+      <div class="form-grid">
+  <div><label>Monthly Salary (RM)</label><input id="salary" type="number" value="3000"></div>
+  <div><label>EPF Rate (%)</label><input id="epfRate" type="number" value="11"></div>
+  <div><label>Bonus (RM)</label><input id="bonus" type="number" value="0"></div>
+  <div><label>Overtime Pay (RM)</label><input id="ot" type="number" value="0"></div>
+</div>
+      <button onclick="calcTakeHomeTool()">Calculate Estimate</button>
+      <div id="takeHomeResult" class="tool-result"><p>Your estimate will appear here.</p><p>💰 <strong>This is a simplified planning estimate.</strong></p></div>
     </div>
   </div>
+</section>
+<section class="tool-section">
+  <div class="container content-wrap">
+    <div class="info-card">
+  <h2>How this calculator works</h2>
+  <p>This calculator starts with your gross monthly salary and estimates common payroll deductions such as EPF, SOCSO, EIS and possible PCB. It is designed for employees, job seekers and small business planning in Malaysia.</p>
 </div>
-
-<div class="container article-wrap">
-  <div class="callout"><h2>Direct answer</h2><p>Monthly salary deductions in Malaysia commonly include EPF, SOCSO, EIS and PCB. These deductions explain why take-home pay is lower than gross salary.</p></div>
-  <div class="article-content">
-    <h2>Quick summary</h2>
-    <table class="salary-table">
-      <thead><tr><th>Topic</th><th>Explanation</th></tr></thead>
-      <tbody><tr><td>EPF deduction</td><td>EPF is a retirement savings contribution. For many employees, this is the largest regular salary deduction.</td></tr><tr><td>SOCSO deduction</td><td>SOCSO provides social security protection for eligible employees and is usually processed by the employer.</td></tr><tr><td>EIS deduction</td><td>EIS is related to employment insurance protection and is normally a small monthly deduction for eligible employees.</td></tr><tr><td>PCB deduction</td><td>PCB is a monthly tax deduction. It depends on taxable income and employee tax profile, so it can differ from one employee to another.</td></tr></tbody>
-    </table>
-    <h2>EPF deduction</h2><p>EPF is a retirement savings contribution. For many employees, this is the largest regular salary deduction.</p><h2>SOCSO deduction</h2><p>SOCSO provides social security protection for eligible employees and is usually processed by the employer.</p><h2>EIS deduction</h2><p>EIS is related to employment insurance protection and is normally a small monthly deduction for eligible employees.</p><h2>PCB deduction</h2><p>PCB is a monthly tax deduction. It depends on taxable income and employee tax profile, so it can differ from one employee to another.</p>
-    <div class="note-box"><h3>Planning note</h3><p>This guide is for salary planning and education only. Always use your payslip, employer payroll details and official sources for final payroll or tax decisions.</p></div>
-  </div>
+<div class="info-card">
+  <h2>What this estimate includes</h2>
+  <table class="tool-table">
+    <tr><th>Item</th><th>Meaning</th></tr>
+    <tr><td>Gross salary</td><td>The salary amount before deductions.</td></tr>
+    <tr><td>EPF</td><td>Employee retirement contribution estimate based on your selected EPF rate.</td></tr>
+    <tr><td>SOCSO and EIS</td><td>Simplified estimates for social security and employment insurance planning.</td></tr>
+    <tr><td>PCB</td><td>Rough monthly tax deduction estimate. Actual PCB depends on LHDN rules and your tax profile.</td></tr>
+  </table>
 </div>
-
-<div class="container">
-  <div class="callout">
-    <h2>Use the Malaysia salary calculators</h2>
-    <p>These guides are for general salary planning. Use the calculators below to estimate your own numbers based on your salary, EPF rate and payroll situation.</p>
-    <div class="related-list">
-      <a href="/salary-calculator-malaysia.html">Malaysia Salary Calculator</a>
-      <a href="/net-salary-calculator-malaysia.html">Take-Home Pay Calculator</a>
-      <a href="/epf-calculator-malaysia.html">EPF Calculator Malaysia</a>
-      <a href="/socso-calculator-malaysia.html">SOCSO Calculator Malaysia</a>
-      <a href="/eis-calculator-malaysia.html">EIS Calculator Malaysia</a>
-      <a href="/income-tax-calculator-malaysia.html">Income Tax Calculator Malaysia</a>
-      <a href="/pcb-calculator-malaysia.html">PCB Calculator Malaysia</a>
-      <a href="/overtime-calculator-malaysia.html">Overtime Calculator Malaysia</a>
-      <a href="/bonus-tax-calculator-malaysia.html">Bonus Tax Calculator Malaysia</a>
-      <a href="/salary-guides-malaysia.html">All Salary Guides</a>
+<div class="info-card faq">
+  <h2>Frequently asked questions</h2>
+  <details open><summary>Is this salary calculator official?</summary><p>No. It is a simplified estimator for planning only. Always refer to official sources or payroll professionals for final payroll calculations.</p></details>
+  <details><summary>Why is take-home pay lower than gross salary?</summary><p>Take-home pay is usually lower because EPF, SOCSO, EIS and possible PCB deductions may be taken from salary before payment.</p></details>
+</div>
+    <div class="info-card">
+      <h2>Related Malaysia salary tools</h2>
+      <p>Use these tools and guides together to understand salary, payroll deductions and estimated take-home pay in Malaysia.</p>
+      <div class="related-grid">
+  <a href="/salary-calculator-malaysia.html">Salary Calculator</a>
+  <a href="/net-salary-calculator-malaysia.html">Take-Home Pay Calculator</a>
+  <a href="/epf-calculator-malaysia.html">EPF Calculator</a>
+  <a href="/socso-calculator-malaysia.html">SOCSO Calculator</a>
+  <a href="/pcb-calculator-malaysia.html">PCB Tax Calculator</a>
+  <a href="/salary-guides-malaysia.html">Salary Guides</a>
+</div>
     </div>
+    <div class="notice">Important: SalaryToolsMY provides simplified estimates for general planning only. Actual EPF, SOCSO, EIS and PCB amounts may vary based on official contribution schedules, tax profile, payroll settings and employer calculation.</div>
   </div>
-</div>
-
-<div class="container faq article-wrap">
-  <h2>Frequently Asked Questions</h2>
-  <details open><summary>Is this guide official payroll advice?</summary><p>No. SalaryToolsMY provides simplified explanations for general planning. Official calculations should come from payroll, EPF, SOCSO or LHDN references.</p></details>
-  <details><summary>Can I use this guide to estimate take-home pay?</summary><p>Yes, it can help you understand the deduction logic. Use the calculator pages for a more personalised salary estimate.</p></details>
-  <details><summary>Why do salary deductions vary?</summary><p>Deductions can vary because salary amount, EPF rate, tax profile, reliefs, bonus, overtime and payroll setup may differ.</p></details>
-</div>
+</section>
 </main>
 <footer class="footer">
   <div class="footer-inner">
@@ -121,6 +148,7 @@
       <p><a href="/salary-calculator-malaysia.html">Salary Calculator</a></p>
       <p><a href="/net-salary-calculator-malaysia.html">Take-Home Pay Calculator</a></p>
       <p><a href="/epf-calculator-malaysia.html">EPF Calculator</a></p>
+      <p><a href="/socso-calculator-malaysia.html">SOCSO Calculator</a></p>
       <p><a href="/pcb-calculator-malaysia.html">PCB Calculator</a></p>
     </div>
     <div>
@@ -140,5 +168,41 @@
   </div>
   <div class="footer-bottom">© 2026 SalaryToolsMY. All calculators are for estimation only.</div>
 </footer>
+<script>
+function rm(value){return 'RM' + Number(value || 0).toLocaleString('en-MY',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function num(id){return Number(document.getElementById(id)?.value || 0);}
+function setResult(id, html){document.getElementById(id).innerHTML = html;}
+function estimateSOCSO(salary){return Math.min(Math.max(salary,0),6000)*0.005;}
+function estimateEIS(salary){return Math.min(Math.max(salary,0),6000)*0.002;}
+function estimatePCBMonthly(monthly, epfMonthly){
+  const annual = Math.max(0,(monthly*12) - (epfMonthly*12) - 9000);
+  const brackets = [
+    [5000,0],[15000,0.01],[15000,0.03],[15000,0.06],[20000,0.11],[30000,0.19],[300000,0.25],[100000,0.26],[500000,0.28],[Infinity,0.30]
+  ];
+  let left=annual, tax=0;
+  for(const [amount, rate] of brackets){
+    if(left<=0) break;
+    const chunk=Math.min(left,amount);
+    tax += chunk*rate;
+    left -= chunk;
+  }
+  return Math.max(0,tax/12);
+}
+function salaryCore(monthly, epfRate, bonus=0, overtime=0){
+  const gross = monthly + bonus + overtime;
+  const epf = gross * epfRate / 100;
+  const socso = estimateSOCSO(monthly);
+  const eis = estimateEIS(monthly);
+  const pcb = estimatePCBMonthly(gross, epf);
+  const net = gross - epf - socso - eis - pcb;
+  return {gross, epf, socso, eis, pcb, net};
+}
+</script>
+<script>
+function calcTakeHomeTool(){
+  const r = salaryCore(num('salary'), num('epfRate'), num('bonus'), num('ot'));
+  setResult('takeHomeResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Gross pay</td><td>${rm(r.gross)}</td></tr><tr><td>EPF</td><td>${rm(r.epf)}</td></tr><tr><td>SOCSO</td><td>${rm(r.socso)}</td></tr><tr><td>EIS</td><td>${rm(r.eis)}</td></tr><tr><td>PCB</td><td>${rm(r.pcb)}</td></tr><tr><td><strong>Estimated take-home pay</strong></td><td><strong>${rm(r.net)}</strong></td></tr></table>`);
+}
+</script>
 </body>
 </html>
