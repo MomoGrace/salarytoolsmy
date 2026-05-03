@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://www.salarytoolsmy.com/sitemap.xml
+Sitemap: https://salarytoolsmy.com/sitemap.xml
