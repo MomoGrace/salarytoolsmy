@@ -1,0 +1,7 @@
+<!-- Optional: add to mobile/footer Guides menu -->
+
+<p><a href="/rm7000-salary-malaysia.html">RM7,000 Salary</a></p>
+<p><a href="/rm10000-salary-malaysia.html">RM10,000 Salary</a></p>
+<p><a href="/net-salary-malaysia.html">Net Salary</a></p>
+<p><a href="/calculate-salary-after-epf-socso-pcb.html">Calculate Salary After Deductions</a></p>
+<p><a href="/minimum-salary-malaysia-2026.html">Minimum Salary Malaysia 2026</a></p>

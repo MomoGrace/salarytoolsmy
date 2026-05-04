@@ -1,0 +1,31 @@
+<!-- Add these cards inside your salary-guides grid/card container -->
+
+<a class="guide-card" href="/rm7000-salary-malaysia.html">
+  <span class="tag">Salary Example</span>
+  <h3>RM7,000 Salary After Tax</h3>
+  <p>Estimate EPF, SOCSO, EIS and PCB deductions for a RM7,000 salary.</p>
+</a>
+
+<a class="guide-card" href="/rm10000-salary-malaysia.html">
+  <span class="tag">Salary Example</span>
+  <h3>RM10,000 Salary Take-Home Pay</h3>
+  <p>Understand estimated net salary after monthly payroll deductions.</p>
+</a>
+
+<a class="guide-card" href="/net-salary-malaysia.html">
+  <span class="tag">Guide</span>
+  <h3>What Is Net Salary in Malaysia?</h3>
+  <p>Learn the difference between gross salary, net salary and take-home pay.</p>
+</a>
+
+<a class="guide-card" href="/calculate-salary-after-epf-socso-pcb.html">
+  <span class="tag">Guide</span>
+  <h3>How to Calculate Salary After EPF, SOCSO and PCB</h3>
+  <p>Step-by-step guide to common salary deductions in Malaysia.</p>
+</a>
+
+<a class="guide-card" href="/minimum-salary-malaysia-2026.html">
+  <span class="tag">Guide</span>
+  <h3>Minimum Salary Malaysia 2026</h3>
+  <p>Current minimum wage reference and what it means for take-home pay.</p>
+</a>
