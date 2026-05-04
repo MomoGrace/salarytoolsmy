@@ -48,3 +48,7 @@ function toolCalc(type){
   }
   document.getElementById('result').innerHTML=out;
 }
+document.querySelector('.menu-toggle').onclick = function() {
+  const menu = document.querySelector('.mobile-menu');
+  menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+};
