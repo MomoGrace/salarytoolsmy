@@ -275,7 +275,38 @@ th{background:#f8fafc}
   .tool-nav a{font-size:.9rem}
   .tool-nav .nav-cta{width:100%;text-align:center}
 }
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #0f172a;
+}
 
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  padding: 10px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.mobile-menu a {
+  padding: 12px 0;
+  color: #0f172a;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 1px solid #eef2f7;
+}
+
+@media (max-width: 768px) {
+  .tool-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
 
 /* Strong CTA blocks for traffic pages */
 .cta-panel{
