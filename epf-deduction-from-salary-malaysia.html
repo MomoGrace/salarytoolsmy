@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EPF Calculator Malaysia (Employee &amp; Employer Contribution Estimate)</title>
-<meta name="description" content="Estimate employee and employer EPF contributions for Malaysia salary planning.">
-<link rel="canonical" href="https://salarytoolsmy.com/epf-calculator-malaysia.html">
+<title>EPF Deduction from Salary Malaysia</title>
+<meta name="description" content="Understand EPF deduction from salary in Malaysia, including employee vs employer contribution and take-home pay impact.">
+<link rel="canonical" href="https://salarytoolsmy.com/epf-deduction-from-salary-malaysia.html">
 <link rel="stylesheet" href="/assets/style.css">
 <style>
 .tool-page{background:#f6f8fb;}
@@ -72,24 +72,13 @@
 <section class="tool-hero">
   <div class="hero-inner">
     <div>
-      <span class="tool-kicker">Free Malaysia calculator</span>
-      <h1>EPF Calculator Malaysia</h1>
-      <p class="lead">Estimate monthly EPF employee and employer contribution amounts for salary planning.</p>
+      <span class="tool-kicker">Malaysia salary guide</span>
+      <h1>EPF Deduction from Salary Malaysia</h1>
+      <p class="lead">Understand how EPF deduction works, how it affects your take-home pay, and how to estimate contributions for salary planning in Malaysia.</p>
       <div class="hero-actions">
         <a class="button" href="/salary-calculator-malaysia.html">Calculate Take-Home Pay</a>
         <a class="button secondary" href="/salary-guides-malaysia.html">Read Salary Guides</a>
       </div>
-    </div>
-    <div class="tool-card">
-      <h2>EPF Contribution Estimate</h2>
-      <div class="form-grid">
-  <div><label>Monthly Salary (RM)</label><input id="epfSalary" type="number" value="3000"></div>
-  <div><label>Employee EPF Rate (%)</label><input id="employeeRate" type="number" value="11"></div>
-  <div><label>Employer EPF Rate (%)</label><input id="employerRate" type="number" value="13"></div>
-  <div><label>Months</label><input id="months" type="number" value="12"></div>
-</div>
-      <button onclick="calcEPFTool()">Calculate Estimate</button>
-      <div id="epfResult" class="tool-result"><p>Your estimate will appear here.</p><p>💰 <strong>This is a simplified planning estimate.</strong></p></div>
     </div>
   </div>
 </section>
@@ -204,13 +193,6 @@ function salaryCore(monthly, epfRate, bonus=0, overtime=0){
   const pcb = estimatePCBMonthly(gross, epf);
   const net = gross - epf - socso - eis - pcb;
   return {gross, epf, socso, eis, pcb, net};
-}
-</script>
-<script>
-function calcEPFTool(){
- const salary=num('epfSalary'), er=num('employeeRate'), mr=num('employerRate'), months=Math.max(1,num('months'));
- const employee=salary*er/100, employer=salary*mr/100, total=employee+employer;
- setResult('epfResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Employee EPF per month</td><td>${rm(employee)}</td></tr><tr><td>Employer EPF per month</td><td>${rm(employer)}</td></tr><tr><td>Total EPF per month</td><td>${rm(total)}</td></tr><tr><td>Total for ${months} months</td><td><strong>${rm(total*months)}</strong></td></tr></table>`);
 }
 </script>
 </body>
