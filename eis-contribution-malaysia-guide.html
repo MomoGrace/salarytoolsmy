@@ -43,6 +43,7 @@
 @media(max-width:920px){.tool-hero .hero-inner{grid-template-columns:1fr}.tool-card{max-width:680px}.related-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:640px){.tool-hero{padding:44px 16px}.form-grid,.related-grid{grid-template-columns:1fr}.tool-card{padding:22px}.tool-table{font-size:14px}.tool-table th,.tool-table td{padding:12px 10px}}
 </style>
+<link rel="stylesheet" href="/assets/cookie-consent.css">
 </head>
 <body class="tool-page">
 <header class="site-header">
@@ -139,6 +140,7 @@
       <p><a href="/terms.html">Terms</a></p>
       <p><a href="/disclaimer.html">Disclaimer</a></p>
       <p><a href="/contact.html">Contact</a></p>
+      <p><a href="#" data-cookie-preferences>Cookie Preferences</a></p>
 <p><a href="/about.html">About</a></p>
     </div>
   </div>
@@ -181,5 +183,6 @@ function calcEISTool(){
  setResult('eisResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Salary used for estimate</td><td>${rm(wage)}</td></tr><tr><td>Employee EIS estimate</td><td>${rm(emp)}</td></tr><tr><td>Employer EIS estimate</td><td>${rm(employer)}</td></tr><tr><td>Total EIS estimate</td><td><strong>${rm(emp+employer)}</strong></td></tr></table>`);
 }
 </script>
+  <script defer src="/assets/cookie-consent.js"></script>
 </body>
 </html>

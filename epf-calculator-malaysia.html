@@ -46,6 +46,7 @@
 @media(max-width:920px){.tool-hero .hero-inner{grid-template-columns:1fr}.tool-card{max-width:680px}.callout .related-grid{grid-template-columns:1fr;}.form-grid{grid-template-columns:1fr;}}
 @media(max-width:640px){.tool-hero{padding:44px 16px}.tool-card{padding:22px}.tool-table{font-size:14px}.tool-table th,.tool-table td{padding:12px 10px}}
 </style>
+<link rel="stylesheet" href="/assets/cookie-consent.css">
 </head>
 <body class="tool-page">
 <header class="site-header">
@@ -133,6 +134,7 @@
     <div><h3>Tools</h3><p><a href="/salary-calculator-malaysia.html">Salary Calculator</a></p><p><a href="/net-salary-calculator-malaysia.html">Take-Home Pay Calculator</a></p><p><a href="/epf-calculator-malaysia.html">EPF Calculator</a></p><p><a href="/socso-calculator-malaysia.html">SOCSO Calculator</a></p><p><a href="/pcb-calculator-malaysia.html">PCB Calculator</a></p></div>
     <div><h3>Guides</h3><p><a href="/salary-guides-malaysia.html">Salary Guides</a></p><p><a href="/salary-3000-malaysia.html">RM3,000 Salary</a></p><p><a href="/salary-5000-malaysia.html">RM5,000 Salary</a></p><p><a href="/gross-salary-vs-net-salary-malaysia.html">Gross vs Net Salary</a></p></div>
     <div><h3>Legal</h3><p><a href="/privacy-policy.html">Privacy Policy</a></p><p><a href="/terms.html">Terms</a></p><p><a href="/disclaimer.html">Disclaimer</a></p><p><a href="/contact.html">Contact</a></p>
+      <p><a href="#" data-cookie-preferences>Cookie Preferences</a></p>
 <p><a href="/about.html">About</a></p></div>
   </div>
   <div class="footer-bottom">© 2026 SalaryToolsMY. All calculators are for estimation only.</div>
@@ -147,5 +149,6 @@ function calcEPFTool(){
  setResult('epfResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Employee EPF per month</td><td>${rm(employee)}</td></tr><tr><td>Employer EPF per month</td><td>${rm(employer)}</td></tr><tr><td>Total EPF per month</td><td>${rm(total)}</td></tr><tr><td>Total for ${months} months</td><td><strong>${rm(total*months)}</strong></td></tr></table><p>These figures are simplified estimates for planning only.</p>`);
 }
 </script>
+  <script defer src="/assets/cookie-consent.js"></script>
 </body>
 </html>

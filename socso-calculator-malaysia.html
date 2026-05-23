@@ -159,6 +159,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/cookie-consent.css">
 </head>
 <body class="tool-page">
 <header class="site-header">
@@ -267,6 +268,7 @@
       <p><a href="/terms.html">Terms</a></p>
       <p><a href="/disclaimer.html">Disclaimer</a></p>
       <p><a href="/contact.html">Contact</a></p>
+      <p><a href="#" data-cookie-preferences>Cookie Preferences</a></p>
 <p><a href="/about.html">About</a></p>
     </div>
   </div>
@@ -309,5 +311,6 @@ function calcSOCSOTool(){
  setResult('socsoResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Salary used for estimate</td><td>${rm(wage)}</td></tr><tr><td>Employee SOCSO estimate</td><td>${rm(emp)}</td></tr><tr><td>Employer SOCSO estimate</td><td>${rm(employer)}</td></tr><tr><td>Total monthly contribution estimate</td><td><strong>${rm(emp+employer)}</strong></td></tr></table>`);
 }
 </script>
+  <script defer src="/assets/cookie-consent.js"></script>
 </body>
 </html>
