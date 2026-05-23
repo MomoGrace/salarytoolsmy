@@ -43,6 +43,7 @@
 @media(max-width:920px){.tool-hero .hero-inner{grid-template-columns:1fr}.tool-card{max-width:680px}.related-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
 @media(max-width:640px){.tool-hero{padding:44px 16px}.form-grid,.related-grid{grid-template-columns:1fr}.tool-card{padding:22px}.tool-table{font-size:14px}.tool-table th,.tool-table td{padding:12px 10px}}
 </style>
+<link rel="stylesheet" href="/assets/cookie-consent.css">
 </head>
 <body class="tool-page">
 <header class="site-header">
@@ -151,6 +152,7 @@
       <p><a href="/terms.html">Terms</a></p>
       <p><a href="/disclaimer.html">Disclaimer</a></p>
       <p><a href="/contact.html">Contact</a></p>
+      <p><a href="#" data-cookie-preferences>Cookie Preferences</a></p>
 <p><a href="/about.html">About</a></p>
     </div>
   </div>
@@ -192,5 +194,6 @@ function calcTakeHomeTool(){
   setResult('takeHomeResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Gross pay</td><td>${rm(r.gross)}</td></tr><tr><td>EPF</td><td>${rm(r.epf)}</td></tr><tr><td>SOCSO</td><td>${rm(r.socso)}</td></tr><tr><td>EIS</td><td>${rm(r.eis)}</td></tr><tr><td>PCB</td><td>${rm(r.pcb)}</td></tr><tr><td><strong>Estimated take-home pay</strong></td><td><strong>${rm(r.net)}</strong></td></tr></table>`);
 }
 </script>
+  <script defer src="/assets/cookie-consent.js"></script>
 </body>
 </html>

@@ -167,6 +167,7 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="/assets/cookie-consent.css">
 </head>
 <body class="tool-page">
 <header class="site-header">
@@ -275,6 +276,7 @@
       <p><a href="/terms.html">Terms</a></p>
       <p><a href="/disclaimer.html">Disclaimer</a></p>
       <p><a href="/contact.html">Contact</a></p>
+      <p><a href="#" data-cookie-preferences>Cookie Preferences</a></p>
 <p><a href="/about.html">About</a></p>
     </div>
   </div>
@@ -318,5 +320,6 @@ function calcPCBTool(){
  setResult('pcbResult', `<table class="tool-table"><tr><th>Item</th><th>Estimate</th></tr><tr><td>Gross pay used</td><td>${rm(gross)}</td></tr><tr><td>Estimated EPF</td><td>${rm(epf)}</td></tr><tr><td>Estimated monthly PCB</td><td><strong>${rm(pcb)}</strong></td></tr><tr><td>Estimated pay after EPF and PCB only</td><td>${rm(gross-epf-pcb)}</td></tr></table><p>PCB depends heavily on tax category, reliefs, rebates and employer payroll method.</p>`);
 }
 </script>
+  <script defer src="/assets/cookie-consent.js"></script>
 </body>
 </html>

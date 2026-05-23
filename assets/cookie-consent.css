@@ -1,0 +1,15 @@
+#salarytoolsmy-cookie-consent{position:fixed;left:0;right:0;bottom:0;z-index:9999;display:none;padding:12px;pointer-events:none}
+#salarytoolsmy-cookie-consent .cc-card{max-width:980px;margin:0 auto;background:#fff;border:1px solid #e5e7eb;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,42,.12);padding:14px;pointer-events:auto}
+#salarytoolsmy-cookie-consent p{margin:0;color:#1f2937;font-size:14px;line-height:1.5}
+#salarytoolsmy-cookie-consent .cc-links a{margin-right:12px;font-size:13px}
+#salarytoolsmy-cookie-consent .cc-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+#salarytoolsmy-cookie-consent button{border:1px solid #d1d5db;background:#fff;color:#111827;border-radius:8px;padding:8px 12px;font-size:13px;cursor:pointer}
+#salarytoolsmy-cookie-consent .cc-primary{background:#111827;color:#fff;border-color:#111827}
+#salarytoolsmy-cookie-panel{margin-top:12px;padding-top:12px;border-top:1px solid #e5e7eb;display:none}
+#salarytoolsmy-cookie-panel.is-open{display:block}
+#salarytoolsmy-cookie-panel .cc-option{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px}
+#salarytoolsmy-cookie-panel .cc-label{font-size:14px;color:#111827}
+#salarytoolsmy-cookie-panel small{display:block;color:#6b7280;font-size:12px}
+#salarytoolsmy-cookie-panel .cc-save{margin-top:8px}
+.cc-toggle{width:18px;height:18px}
+@media (max-width:640px){#salarytoolsmy-cookie-consent{padding:8px}#salarytoolsmy-cookie-consent .cc-card{padding:12px;border-radius:10px}#salarytoolsmy-cookie-consent p{font-size:13px}#salarytoolsmy-cookie-consent button{width:100%}}
